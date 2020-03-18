@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+<script>
+
+    function pulaLinha(){
+        document.write("<br>");
+        
+    }
+
+    function mostra(frase){ 
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function calculaIMC(peso,altura){
+            
+        return (peso/(altura*altura));
+    }
+    
+    var nome = [prompt("Nome do paciente 1: "),prompt("Nome do paciente 2: "),prompt("Nome do paciente 3: ")];
+    var peso = [prompt("escreva seu peso, " + nome[0] +" :"),prompt("escreva seu peso, " + nome[1] +" :"),prompt("escreva seu peso, "+ nome[2] + " :")];
+    var altura = [prompt("escreva sua altura, " + nome[0] +" :"),prompt("escreva sua altura, " + nome[1] +" :"),prompt("escreva sua altura, "+ nome[2] + " :")];
+
+    for(var i=0; i<=2;i++){
+        mostra("Nome do paciente: " + nome[i]);
+        mostra("Peso: " + peso[i]);
+        mostra("Altura: " + altura[i]);
+        mostra(nome[i] + ", o seu IMC calculado é: " + calculaIMC(peso[i],altura[i]) + "<br>" );
+    
+    }
+
+    
+
+</script>

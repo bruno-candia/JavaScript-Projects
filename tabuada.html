@@ -1,0 +1,18 @@
+<meta charset="UTF-8">
+<script>
+
+    function pulaLinha(){
+        document.write("<br>");
+        
+    }
+
+    function mostra(frase){ 
+        document.write(frase);
+        pulaLinha();
+    }
+
+    for(var tabuada = 1; tabuada <=10 ; tabuada++){
+        pulaLinha();
+        for(var multiplicador = 1; multiplicador <=10; multiplicador++) mostra(String(tabuada) + " * " + String(multiplicador) + " = " + tabuada*multiplicador);
+    }
+</script>

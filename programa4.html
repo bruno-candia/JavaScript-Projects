@@ -1,0 +1,52 @@
+<canvas width="600" height="400"></canvas>
+<br>
+Escolha uma cor <input type="color">
+
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    var paleta = document.querySelector('input');
+    var tamanho = 10;
+    var desenha = false;
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+    
+    tela.onmousemove = function(evento) {
+        if(desenha) {
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+        pincel.fillStyle = paleta.value;
+        pincel.beginPath();
+        pincel.arc(x, y, tamanho, 0, 2 * 3.14);
+        pincel.fill();
+        console.log(x + ',' + y);
+        }
+
+        if (evento.shiftKey && evento.altKey) {
+
+            alert('Só aperte uma tecla por vez, por favor!');
+
+        } else if (evento.shiftKey && tamanho + 10 <= 40) {
+            tamanho = tamanho + 10;
+
+        } else if (evento.altKey && tamanho - 5 >= 10) {
+            tamanho = tamanho - 5;
+
+        }
+        
+    }
+
+    tela.onmousedown = function(){
+        desenha = true;
+  
+    }
+
+    tela.onmouseup = function(){
+        desenha = false;
+    }
+
+
+    var mudar = false;
+
+
+</script>
